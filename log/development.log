@@ -28761,3 +28761,13 @@ Command :: file -b --mime '/tmp/3cda7e6bda847bd4b51dedbe69ab444a20181127-29862-a
   ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
   [1m[36mSpree::OptionType Load (0.3ms)[0m  [1m[34mSELECT  "spree_option_types".* FROM "spree_option_types" WHERE "spree_option_types"."id" = ? ORDER BY "spree_option_types"."position" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/bin/rake:23
