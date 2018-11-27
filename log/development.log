@@ -28781,3 +28781,746 @@ Command :: file -b --mime '/tmp/3cda7e6bda847bd4b51dedbe69ab444a20181127-29862-a
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-11-27 21:09:34 -0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Spree::HomeController#index as HTML
+  [1m[36mSpree::Store Load (0.8ms)[0m  [1m[34mSELECT  "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = ? OR "spree_stores"."default" = ?) ORDER BY "spree_stores"."default" ASC LIMIT ?[0m  [["url", "localhost"], ["default", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application
+  [1m[36mSpree::Taxonomy Load (0.7ms)[0m  [1m[34mSELECT "spree_taxonomies".* FROM "spree_taxonomies" ORDER BY "spree_taxonomies"."position" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.5ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL AND "spree_taxons"."taxonomy_id" IN (?, ?)[0m  [["taxonomy_id", 1], ["taxonomy_id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.7ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IN (?, ?) ORDER BY "spree_taxons"."lft" ASC[0m  [["parent_id", 1], ["parent_id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_taxonomies.html.erb (123.4ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "spree_products"."id" AS count_column FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:09:35.406762') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?) subquery_for_count[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT  MAX("spree_products"."updated_at") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:09:35.406762') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "spree_products"."id") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:09:35.406762') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL[0m  [["is_master", 1], ["currency", "USD"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:09:35.406762') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Spree::Product Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:09:35.406762') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (1.5ms)[0m  [1m[34mSELECT  DISTINCT "spree_products".* FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:09:35.406762') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.7ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["is_master", 1], ["product_id", 1], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 5], ["product_id", 6], ["product_id", 7], ["product_id", 8], ["product_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Price Load (0.7ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_prices"."variant_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY country_iso IS NULL, "spree_prices"."updated_at" DESC, "spree_prices"."id" DESC[0m  [["variant_id", 1], ["variant_id", 2], ["variant_id", 3], ["variant_id", 4], ["variant_id", 5], ["variant_id", 6], ["variant_id", 7], ["variant_id", 8], ["variant_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 1], ["viewable_id", 2], ["viewable_id", 3], ["viewable_id", 4], ["viewable_id", 5], ["viewable_id", 6], ["viewable_id", 7], ["viewable_id", 8], ["viewable_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 1], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (1.4ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 2], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.9ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 3], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (1.0ms)
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 4], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 5], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 6], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (1.0ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.9ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 8], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.3ms)
+  [1m[36mSpree::Image Load (0.9ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 9], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_products.html.erb (537.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application (716.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_head.html.erb (36851.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_locale_selector.html.erb (2.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/frontend/spree/shared/_login_bar_items.html.erb (1.6ms)
+  [1m[36mSpree::Taxon Load (0.8ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_search.html.erb (8.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_nav_bar.html.erb (37.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_main_nav_bar.html.erb (2.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_header.html.erb (75.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_sidebar.html.erb (0.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_footer.html.erb (1.4ms)
+Completed 200 OK in 37955ms (Views: 37737.3ms | ActiveRecord: 31.7ms)
+
+
+Started GET "/cart_link" for 127.0.0.1 at 2018-11-27 21:10:13 -0200
+Processing by Spree::StoreController#cart_link as */*
+  [1m[36mSpree::Store Load (0.7ms)[0m  [1m[34mSELECT  "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = ? OR "spree_stores"."default" = ?) ORDER BY "spree_stores"."default" ASC LIMIT ?[0m  [["url", "localhost"], ["default", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Order Load (0.6ms)[0m  [1m[34mSELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = ? AND "spree_orders"."guest_token" = ? AND "spree_orders"."store_id" = ? AND "spree_orders"."user_id" IS NULL LIMIT ?[0m  [["currency", "USD"], ["guest_token", "N_UXdHJvaJJyNWWNnyT8Dg"], ["store_id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_link_to_cart.html.erb (15.5ms)
+  [1m[36mCACHE Spree::Order Load (0.0ms)[0m  [1m[34mSELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = ? AND "spree_orders"."guest_token" = ? AND "spree_orders"."store_id" = ? AND "spree_orders"."user_id" IS NULL LIMIT ?[0m  [["currency", "USD"], ["guest_token", "N_UXdHJvaJJyNWWNnyT8Dg"], ["store_id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 104ms (Views: 92.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-27 21:10:18 -0200
+Processing by Spree::HomeController#index as HTML
+  [1m[36mSpree::Store Load (2.9ms)[0m  [1m[34mSELECT  "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = ? OR "spree_stores"."default" = ?) ORDER BY "spree_stores"."default" ASC LIMIT ?[0m  [["url", "localhost"], ["default", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application
+  [1m[36mSpree::Taxonomy Load (0.5ms)[0m  [1m[34mSELECT "spree_taxonomies".* FROM "spree_taxonomies" ORDER BY "spree_taxonomies"."position" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.7ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL AND "spree_taxons"."taxonomy_id" IN (?, ?)[0m  [["taxonomy_id", 1], ["taxonomy_id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.8ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IN (?, ?) ORDER BY "spree_taxons"."lft" ASC[0m  [["parent_id", 1], ["parent_id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_taxonomies.html.erb (16.0ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "spree_products"."id" AS count_column FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:10:18.887702') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?) subquery_for_count[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT  MAX("spree_products"."updated_at") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:10:18.887702') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "spree_products"."id") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:10:18.887702') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL[0m  [["is_master", 1], ["currency", "USD"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:10:18.887702') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Spree::Product Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:10:18.887702') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (1.5ms)[0m  [1m[34mSELECT  DISTINCT "spree_products".* FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:10:18.887702') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.6ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["is_master", 1], ["product_id", 1], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 5], ["product_id", 6], ["product_id", 7], ["product_id", 8], ["product_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Price Load (0.9ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_prices"."variant_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY country_iso IS NULL, "spree_prices"."updated_at" DESC, "spree_prices"."id" DESC[0m  [["variant_id", 1], ["variant_id", 2], ["variant_id", 3], ["variant_id", 4], ["variant_id", 5], ["variant_id", 6], ["variant_id", 7], ["variant_id", 8], ["variant_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 1], ["viewable_id", 2], ["viewable_id", 3], ["viewable_id", 4], ["viewable_id", 5], ["viewable_id", 6], ["viewable_id", 7], ["viewable_id", 8], ["viewable_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 1], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (1.2ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 2], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.9ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 3], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (1.1ms)
+  [1m[36mSpree::Image Load (1.0ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 4], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 5], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 6], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (1.0ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (1.0ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 8], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.9ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 9], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_products.html.erb (192.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application (234.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_head.html.erb (112.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_locale_selector.html.erb (2.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/frontend/spree/shared/_login_bar_items.html.erb (1.4ms)
+  [1m[36mSpree::Taxon Load (0.7ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_search.html.erb (6.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_nav_bar.html.erb (20.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_main_nav_bar.html.erb (2.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_header.html.erb (36.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_sidebar.html.erb (0.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 433ms (Views: 395.7ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/cart_link" for 127.0.0.1 at 2018-11-27 21:10:19 -0200
+Processing by Spree::StoreController#cart_link as */*
+  [1m[36mSpree::Store Load (0.8ms)[0m  [1m[34mSELECT  "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = ? OR "spree_stores"."default" = ?) ORDER BY "spree_stores"."default" ASC LIMIT ?[0m  [["url", "localhost"], ["default", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Order Load (0.7ms)[0m  [1m[34mSELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = ? AND "spree_orders"."guest_token" = ? AND "spree_orders"."store_id" = ? AND "spree_orders"."user_id" IS NULL LIMIT ?[0m  [["currency", "USD"], ["guest_token", "N_UXdHJvaJJyNWWNnyT8Dg"], ["store_id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_link_to_cart.html.erb (9.8ms)
+  [1m[36mCACHE Spree::Order Load (0.0ms)[0m  [1m[34mSELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = ? AND "spree_orders"."guest_token" = ? AND "spree_orders"."store_id" = ? AND "spree_orders"."user_id" IS NULL LIMIT ?[0m  [["currency", "USD"], ["guest_token", "N_UXdHJvaJJyNWWNnyT8Dg"], ["store_id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Completed 304 Not Modified in 59ms (Views: 48.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-11-27 21:11:03 -0200
+Processing by Spree::Admin::RootController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Completed 302 Found in 285ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-11-27 21:11:03 -0200
+Processing by Spree::Admin::UserSessionsController#new as HTML
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/user_sessions/new.html.erb within spree/layouts/admin
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/user_sessions/new.html.erb within spree/layouts/admin (57.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_js_locale_data.html.erb (6.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_head.html.erb (1249.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation_header.html.erb (6.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_tabs.html.erb (49.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_menu.html.erb (55.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_locale_selection.html.erb (2.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/shared/_navigation_footer.html.erb (1.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation.html.erb (102.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_header.html.erb (1.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_flash.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_spinner.html.erb (1.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_table_filter.html.erb (1.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 1515ms (Views: 1506.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-11-27 21:11:26 -0200
+Processing by Spree::Admin::UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"srz20SxnpdsM5DGw2wTcgBo6Mm+ZcLh9vgiU8Rxe9Yps53gobCe1tKQ8/mlHFhDyn71sNy4gFnCoJBy41Xzebg==", "spree_user"=>{"email"=>"pedrohgaffonso@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mSpree::User Load (0.7ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."email" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["email", "pedrohgaffonso@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Order Load (0.5ms)[0m  [1m[34mSELECT "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."guest_token" = ? AND "spree_orders"."user_id" IS NULL[0m  [["guest_token", "N_UXdHJvaJJyNWWNnyT8Dg"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::User Update (0.9ms)[0m  [1m[33mUPDATE "spree_users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "spree_users"."id" = ?[0m  [["current_sign_in_at", "2018-11-27 23:11:26.173904"], ["last_sign_in_at", "2018-11-27 23:11:26.173904"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2018-11-27 23:11:26.176040"], ["id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (130.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 175ms (ActiveRecord: 133.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-11-27 21:11:26 -0200
+Processing by Spree::Admin::RootController#index as HTML
+  [1m[36mSpree::User Load (0.7ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.4ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/orders
+Completed 302 Found in 34ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2018-11-27 21:11:26 -0200
+Processing by Spree::Admin::OrdersController#index as HTML
+  [1m[36mSpree::User Load (0.6ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.2ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/orders/index.html.erb within spree/layouts/admin
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "spree_stores"[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NOT NULL[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Order Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NOT NULL LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_no_objects_found.html.erb (1.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/orders/index.html.erb within spree/layouts/admin (227.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_js_locale_data.html.erb (6.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_head.html.erb (856.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation_header.html.erb (5.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_sub_menu.html.erb (6.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_settings_sub_menu.html.erb (78.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_promotion_sub_menu.html.erb (7.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_tabs.html.erb (157.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_menu.html.erb (163.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_locale_selection.html.erb (2.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/shared/_navigation_footer.html.erb (3.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation.html.erb (191.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_header.html.erb (1.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_flash.html.erb (1.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_spinner.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_table_filter.html.erb (0.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 1374ms (Views: 1320.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2018-11-27 21:11:36 -0200
+Processing by Spree::Admin::ProductsController#index as HTML
+  [1m[36mSpree::User Load (0.5ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.2ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/index.html.erb within spree/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.7ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL ORDER BY "spree_products"."name" ASC, "spree_products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.8ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_variants"."position" ASC[0m  [["is_master", 0], ["product_id", 7], ["product_id", 6], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 8], ["product_id", 5], ["product_id", 9], ["product_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 10], ["viewable_id", 11], ["viewable_id", 12], ["viewable_id", 13], ["viewable_id", 14], ["viewable_id", 15], ["viewable_id", 16], ["viewable_id", 17], ["viewable_id", 18], ["viewable_id", 19]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.6ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["is_master", 1], ["product_id", 7], ["product_id", 6], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 8], ["product_id", 5], ["product_id", 9], ["product_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 1], ["viewable_id", 2], ["viewable_id", 3], ["viewable_id", 4], ["viewable_id", 5], ["viewable_id", 6], ["viewable_id", 7], ["viewable_id", 8], ["viewable_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Price Load (0.6ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL AND "spree_prices"."variant_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY country_iso IS NULL, "spree_prices"."updated_at" DESC, "spree_prices"."id" DESC[0m  [["currency", "USD"], ["variant_id", 1], ["variant_id", 2], ["variant_id", 3], ["variant_id", 4], ["variant_id", 5], ["variant_id", 6], ["variant_id", 7], ["variant_id", 8], ["variant_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (1.2ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 6], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 2], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 3], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (1.0ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 4], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 8], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 5], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 9], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.4ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 1], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/index.html.erb within spree/layouts/admin (222.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_js_locale_data.html.erb (6.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_head.html.erb (664.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation_header.html.erb (6.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_sub_menu.html.erb (6.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_settings_sub_menu.html.erb (6.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_promotion_sub_menu.html.erb (2.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_tabs.html.erb (37.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_menu.html.erb (43.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_locale_selection.html.erb (1.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/shared/_navigation_footer.html.erb (2.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation.html.erb (75.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_header.html.erb (1.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_flash.html.erb (1.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_spinner.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_table_filter.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 1079ms (Views: 1051.6ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/admin/products/apache-baseball-jersey/edit" for 127.0.0.1 at 2018-11-27 21:11:47 -0200
+Processing by Spree::Admin::ProductsController#edit as HTML
+  Parameters: {"id"=>"apache-baseball-jersey"}
+  [1m[36mSpree::User Load (6.0ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.2ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.9ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."slug" = ? LIMIT ?[0m  [["slug", "apache-baseball-jersey"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/edit.html.erb within spree/layouts/admin
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_tabs.html.erb (11.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_core-2.7.0/app/views/spree/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mSpree::Variant Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? LIMIT ?[0m  [["product_id", 7], ["is_master", 0], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.6ms)[0m  [1m[34mSELECT  "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? LIMIT ?[0m  [["product_id", 7], ["is_master", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Price Load (0.5ms)[0m  [1m[34mSELECT  "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."variant_id" = ? AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL ORDER BY country_iso IS NULL, "spree_prices"."updated_at" DESC, "spree_prices"."id" DESC LIMIT ?[0m  [["variant_id", 7], ["currency", "USD"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_number_with_currency.html.erb (30.9ms)
+  [1m[36mSpree::TaxRate Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_tax_rates" WHERE "spree_tax_rates"."deleted_at" IS NULL AND "spree_tax_rates"."included_in_price" = ? LIMIT ?[0m  [["included_in_price", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_number_with_currency.html.erb (6.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_datepicker.html.erb (2.1ms)
+  [1m[36mCACHE Spree::Variant Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? LIMIT ?[0m  [["product_id", 7], ["is_master", 0], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::ShippingCategory Load (0.6ms)[0m  [1m[34mSELECT "spree_shipping_categories".* FROM "spree_shipping_categories" ORDER BY "spree_shipping_categories"."name" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::TaxCategory Load (0.6ms)[0m  [1m[34mSELECT "spree_tax_categories".* FROM "spree_tax_categories" WHERE "spree_tax_categories"."deleted_at" IS NULL ORDER BY "spree_tax_categories"."name" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "spree_taxons"."id" FROM "spree_taxons" INNER JOIN "spree_products_taxons" ON "spree_taxons"."id" = "spree_products_taxons"."taxon_id" WHERE "spree_products_taxons"."product_id" = ?[0m  [["product_id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "spree_option_types"."id" FROM "spree_option_types" INNER JOIN "spree_product_option_types" ON "spree_option_types"."id" = "spree_product_option_types"."option_type_id" WHERE "spree_product_option_types"."product_id" = ? ORDER BY "spree_option_types"."position" ASC[0m  [["product_id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/_form.html.erb (303.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_edit_resource_links.html.erb (3.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/edit.html.erb within spree/layouts/admin (415.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_js_locale_data.html.erb (7.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_head.html.erb (718.4ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation_header.html.erb (5.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_sub_menu.html.erb (6.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_settings_sub_menu.html.erb (7.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_promotion_sub_menu.html.erb (2.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_tabs.html.erb (39.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_menu.html.erb (44.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_locale_selection.html.erb (1.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/shared/_navigation_footer.html.erb (2.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation.html.erb (69.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_header.html.erb (1.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_flash.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_spinner.html.erb (1.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_table_filter.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 1313ms (Views: 1256.4ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/api/taxons?ids=7%2C9&per_page=2&without_children=true" for 127.0.0.1 at 2018-11-27 21:11:49 -0200
+Processing by Spree::Api::TaxonsController#index as JSON
+  Parameters: {"ids"=>"7,9", "per_page"=>"2", "without_children"=>"true"}
+  [1m[36mSpree::User Load (1.2ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."spree_api_key" = ? LIMIT ?[0m  [["spree_api_key", "227ba1c063ad99e242a56f186cd8a573dd836acce9a014b6"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "spree_roles"."name" FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.3ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_api-2.7.0/app/views/spree/api/taxons/index.json.jbuilder
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "spree_taxons" WHERE "spree_taxons"."id" IN (?, ?) LIMIT ? OFFSET ?) subquery_for_count[0m  [["id", 7], ["id", 9], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "spree_taxons" WHERE "spree_taxons"."id" IN (?, ?)[0m  [["id", 7], ["id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_api-2.7.0/app/views/spree/api/shared/_pagination.json.jbuilder (9.0ms)
+  [1m[36mSpree::Taxon Load (0.7ms)[0m  [1m[34mSELECT  "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."id" IN (?, ?) LIMIT ? OFFSET ?[0m  [["id", 7], ["id", 9], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.6ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."lft" <= 9 AND "spree_taxons"."rgt" >= 10 AND ("spree_taxons"."id" != 7) ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.6ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."lft" <= 16 AND "spree_taxons"."rgt" >= 17 AND ("spree_taxons"."id" != 9) ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_api-2.7.0/app/views/spree/api/taxons/index.json.jbuilder (144.2ms)
+Completed 200 OK in 265ms (Views: 237.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/admin/products/apache-baseball-jersey/images" for 127.0.0.1 at 2018-11-27 21:11:52 -0200
+Processing by Spree::Admin::ImagesController#index as HTML
+  Parameters: {"product_id"=>"apache-baseball-jersey"}
+  [1m[36mSpree::User Load (0.5ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.3ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.5ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL AND "spree_products"."slug" = ? LIMIT ?[0m  [["slug", "apache-baseball-jersey"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.5ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? ORDER BY "spree_variants"."position" ASC[0m  [["product_id", 7], ["is_master", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.7ms)[0m  [1m[34mSELECT  "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? LIMIT ?[0m  [["product_id", 7], ["is_master", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/index.html.erb within spree/layouts/admin
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_tabs.html.erb (7.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/_form.html.erb (12.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/_new.html.erb (22.1ms)
+  [1m[36mSpree::Image Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_assets" WHERE "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" = ? AND "spree_assets"."viewable_type" = ? LIMIT ?[0m  [["viewable_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? LIMIT ?[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered collection of /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/_image_row.html.erb [0 times] (0.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/index.html.erb within spree/layouts/admin (74.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_js_locale_data.html.erb (7.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_head.html.erb (748.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation_header.html.erb (7.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_sub_menu.html.erb (6.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_settings_sub_menu.html.erb (8.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_promotion_sub_menu.html.erb (2.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_tabs.html.erb (39.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_menu.html.erb (47.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_locale_selection.html.erb (2.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/shared/_navigation_footer.html.erb (3.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation.html.erb (80.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_header.html.erb (1.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_flash.html.erb (1.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_spinner.html.erb (1.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_table_filter.html.erb (1.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 981ms (Views: 949.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/admin/products/apache-baseball-jersey/images" for 127.0.0.1 at 2018-11-27 21:12:03 -0200
+Processing by Spree::Admin::ImagesController#create as JS
+  Parameters: {"image"=>{"attachment"=>#<ActionDispatch::Http::UploadedFile:0x00007f30adb047f0 @tempfile=#<Tempfile:/tmp/RackMultipart20181127-31164-1y87p6x.jpg>, @original_filename="iphone5_branco.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"iphone5_branco.jpg\"\r\nContent-Type: image/jpeg\r\n">, "viewable_id"=>"7"}, "upload_id"=>"c3", "product_id"=>"apache-baseball-jersey"}
+  [1m[36mSpree::User Load (1.1ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.2ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.7ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL AND "spree_products"."slug" = ? LIMIT ?[0m  [["slug", "apache-baseball-jersey"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.5ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? ORDER BY "spree_variants"."position" ASC[0m  [["product_id", 7], ["is_master", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (2.2ms)[0m  [1m[34mSELECT  "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? LIMIT ?[0m  [["product_id", 7], ["is_master", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+[paperclip] Trying to link /tmp/RackMultipart20181127-31164-1y87p6x.jpg to /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg
+[paperclip] Trying to link /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg to /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-e6c0uj.jpg
+Command :: file -b --mime '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-e6c0uj.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]'
+Command :: convert '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' -auto-orient -resize "48x48>" -strip -auto-orient -colorspace sRGB '/tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-vklc1v'
+[paperclip] Trying to link /tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-vklc1v to /tmp/c29e7111fd28a978daadf92dca1c3afc20181127-31164-1hxziox
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]'
+Command :: convert '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' -auto-orient -resize "100x100>" -strip -auto-orient -colorspace sRGB '/tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-1l9qw2l'
+[paperclip] Trying to link /tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-1l9qw2l to /tmp/8733969e1dc2cc7c8b3f2cc0d135709f20181127-31164-1ab3mum
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]'
+Command :: convert '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' -auto-orient -resize "240x240>" -strip -auto-orient -colorspace sRGB '/tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-1e1rh6t'
+[paperclip] Trying to link /tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-1e1rh6t to /tmp/86c70dfe7c8817304f3298b160abf29a20181127-31164-d7gtw6
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]'
+Command :: convert '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' -auto-orient -resize "600x600>" -strip -auto-orient -colorspace sRGB '/tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-cdtcnu'
+[paperclip] Trying to link /tmp/bb57c5b033ac508a9ea259cd8c038f1620181127-31164-cdtcnu to /tmp/e4f32b83394eb2237545d5543cfc5ac020181127-31164-7z441h
+[paperclip] Trying to link /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg to /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-k07bw4.jpg
+Command :: file -b --mime '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-k07bw4.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg[0]' 2>/dev/null
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+[paperclip] Trying to link /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-15t7tht.jpg to /tmp/b1cf78808065863e60bb62b186923ec020181127-31164-1srfepf.jpg
+Command :: file -b --mime '/tmp/b1cf78808065863e60bb62b186923ec020181127-31164-1srfepf.jpg'
+  [1m[36mSpree::Asset Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_id" = ? AND "spree_assets"."viewable_type" = ? AND ("spree_assets"."position" IS NOT NULL) ORDER BY "spree_assets"."position" DESC LIMIT ?[0m  [["viewable_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Create (5.3ms)[0m  [1m[32mINSERT INTO "spree_assets" ("viewable_type", "viewable_id", "attachment_width", "attachment_height", "attachment_file_size", "position", "attachment_content_type", "attachment_file_name", "type", "attachment_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 7], ["attachment_width", 439], ["attachment_height", 546], ["attachment_file_size", 38028], ["position", 1], ["attachment_content_type", "image/jpeg"], ["attachment_file_name", "iphone5_branco.jpg"], ["type", "Spree::Image"], ["attachment_updated_at", "2018-11-27 23:12:03.454365"], ["created_at", "2018-11-27 23:12:03.976245"], ["updated_at", "2018-11-27 23:12:03.976245"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.5ms)[0m  [1m[34mSELECT  "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.4ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Update (0.6ms)[0m  [1m[33mUPDATE "spree_variants" SET "updated_at" = ? WHERE "spree_variants"."id" = ?[0m  [["updated_at", "2018-11-27 23:12:04.001623"], ["id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Update (0.5ms)[0m  [1m[33mUPDATE "spree_products" SET "updated_at" = ? WHERE "spree_products"."id" = ?[0m  [["updated_at", "2018-11-27 23:12:04.050509"], ["id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.4ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" INNER JOIN "spree_products_taxons" ON "spree_taxons"."id" = "spree_products_taxons"."taxon_id" WHERE "spree_products_taxons"."product_id" = ?[0m  [["product_id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.5ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."lft" <= 9 AND "spree_taxons"."rgt" >= 10 ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.5ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."lft" <= 16 AND "spree_taxons"."rgt" >= 17 ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Update All (0.7ms)[0m  [1m[33mUPDATE "spree_taxons" SET "updated_at" = '2018-11-27 23:12:04.064807' WHERE "spree_taxons"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 5], ["id", 7], ["id", 2], ["id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxonomy Update All (0.7ms)[0m  [1m[33mUPDATE "spree_taxonomies" SET "updated_at" = '2018-11-27 23:12:04.068229' WHERE "spree_taxonomies"."id" IN (SELECT "spree_taxonomies"."id" FROM "spree_taxonomies" WHERE "spree_taxonomies"."id" IN (?, ?) ORDER BY "spree_taxonomies"."position" ASC)[0m  [["id", 1], ["id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (125.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/create.js.erb
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (1.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_modal.html.erb (1.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/_image_row.html.erb (26.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/images/create.js.erb (34.8ms)
+Completed 200 OK in 838ms (Views: 57.4ms | ActiveRecord: 141.3ms)
+
+
+Started DELETE "/admin/products/apache-baseball-jersey/images/13" for 127.0.0.1 at 2018-11-27 21:12:12 -0200
+Processing by Spree::Admin::ImagesController#destroy as JS
+  Parameters: {"product_id"=>"apache-baseball-jersey", "id"=>"13"}
+  [1m[36mSpree::User Load (0.6ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.3ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.6ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL AND "spree_products"."slug" = ? LIMIT ?[0m  [["slug", "apache-baseball-jersey"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.6ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? ORDER BY "spree_variants"."position" ASC[0m  [["product_id", 7], ["is_master", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.6ms)[0m  [1m[34mSELECT  "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."product_id" = ? AND "spree_variants"."is_master" = ? LIMIT ?[0m  [["product_id", 7], ["is_master", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Destroy (1.2ms)[0m  [1m[31mDELETE FROM "spree_assets" WHERE "spree_assets"."id" = ?[0m  [["id", 13]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.5ms)[0m  [1m[34mSELECT  "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.4ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Asset Update All (0.4ms)[0m  [1m[33mUPDATE "spree_assets" SET "position" = ("spree_assets"."position" - 1), "updated_at" = '2018-11-27 23:12:12.227889' WHERE "spree_assets"."viewable_id" = ? AND "spree_assets"."viewable_type" = ? AND ("spree_assets"."position" > 1)[0m  [["viewable_id", 7], ["viewable_type", "Spree::Variant"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Update (0.7ms)[0m  [1m[33mUPDATE "spree_variants" SET "updated_at" = ? WHERE "spree_variants"."id" = ?[0m  [["updated_at", "2018-11-27 23:12:12.217985"], ["id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Update (0.7ms)[0m  [1m[33mUPDATE "spree_products" SET "updated_at" = ? WHERE "spree_products"."id" = ?[0m  [["updated_at", "2018-11-27 23:12:12.233753"], ["id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.2ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" INNER JOIN "spree_products_taxons" ON "spree_taxons"."id" = "spree_products_taxons"."taxon_id" WHERE "spree_products_taxons"."product_id" = ?[0m  [["product_id", 7]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.5ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."lft" <= 9 AND "spree_taxons"."rgt" >= 10 ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.5ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."lft" <= 16 AND "spree_taxons"."rgt" >= 17 ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Update All (0.8ms)[0m  [1m[33mUPDATE "spree_taxons" SET "updated_at" = '2018-11-27 23:12:12.247132' WHERE "spree_taxons"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 5], ["id", 7], ["id", 2], ["id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxonomy Update All (0.8ms)[0m  [1m[33mUPDATE "spree_taxonomies" SET "updated_at" = '2018-11-27 23:12:12.250693' WHERE "spree_taxonomies"."id" IN (SELECT "spree_taxonomies"."id" FROM "spree_taxonomies" WHERE "spree_taxonomies"."id" IN (?, ?) ORDER BY "spree_taxonomies"."position" ASC)[0m  [["id", 1], ["id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (120.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+[paperclip] deleting /home/user/projetoprova/public/spree/products/13/original/iphone5_branco.jpg
+[paperclip] deleting /home/user/projetoprova/public/spree/products/13/mini/iphone5_branco.jpg
+[paperclip] deleting /home/user/projetoprova/public/spree/products/13/small/iphone5_branco.jpg
+[paperclip] deleting /home/user/projetoprova/public/spree/products/13/product/iphone5_branco.jpg
+[paperclip] deleting /home/user/projetoprova/public/spree/products/13/large/iphone5_branco.jpg
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_destroy.js.erb (1.2ms)
+Completed 200 OK in 251ms (Views: 26.7ms | ActiveRecord: 133.5ms)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2018-11-27 21:12:15 -0200
+Processing by Spree::Admin::ProductsController#index as HTML
+  [1m[36mSpree::User Load (0.7ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Role Load (0.4ms)[0m  [1m[34mSELECT "spree_roles".* FROM "spree_roles" INNER JOIN "spree_roles_users" ON "spree_roles"."id" = "spree_roles_users"."role_id" WHERE "spree_roles_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/index.html.erb within spree/layouts/admin
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (0.8ms)[0m  [1m[34mSELECT  "spree_products".* FROM "spree_products" WHERE "spree_products"."deleted_at" IS NULL ORDER BY "spree_products"."name" ASC, "spree_products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.9ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_variants"."position" ASC[0m  [["is_master", 0], ["product_id", 7], ["product_id", 6], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 8], ["product_id", 5], ["product_id", 9], ["product_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.9ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 10], ["viewable_id", 11], ["viewable_id", 12], ["viewable_id", 13], ["viewable_id", 14], ["viewable_id", 15], ["viewable_id", 16], ["viewable_id", 17], ["viewable_id", 18], ["viewable_id", 19]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.7ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["is_master", 1], ["product_id", 7], ["product_id", 6], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 8], ["product_id", 5], ["product_id", 9], ["product_id", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 1], ["viewable_id", 2], ["viewable_id", 3], ["viewable_id", 4], ["viewable_id", 5], ["viewable_id", 6], ["viewable_id", 7], ["viewable_id", 8], ["viewable_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Price Load (0.6ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL AND "spree_prices"."variant_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY country_iso IS NULL, "spree_prices"."updated_at" DESC, "spree_prices"."id" DESC[0m  [["currency", "USD"], ["variant_id", 1], ["variant_id", 2], ["variant_id", 3], ["variant_id", 4], ["variant_id", 5], ["variant_id", 6], ["variant_id", 7], ["variant_id", 8], ["variant_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (1.1ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 6], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.6ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 2], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.8ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 3], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (1.0ms)
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 4], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.8ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 8], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.7ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 5], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.9ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 9], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 1], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_image.html.erb (0.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/products/index.html.erb within spree/layouts/admin (226.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_js_locale_data.html.erb (6.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_head.html.erb (676.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation_header.html.erb (6.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_product_sub_menu.html.erb (5.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_settings_sub_menu.html.erb (5.7ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_promotion_sub_menu.html.erb (2.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_tabs.html.erb (34.5ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_menu.html.erb (39.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_locale_selection.html.erb (1.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/backend/spree/admin/shared/_navigation_footer.html.erb (3.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_navigation.html.erb (67.2ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_header.html.erb (1.0ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_flash.html.erb (1.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_spinner.html.erb (0.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_table_filter.html.erb (0.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_backend-2.7.0/app/views/spree/admin/shared/_sidebar.html.erb (1.1ms)
+Completed 200 OK in 1036ms (Views: 1007.1ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2018-11-27 21:12:24 -0200
+Processing by Spree::Admin::UserSessionsController#destroy as HTML
+  [1m[36mSpree::User Load (0.7ms)[0m  [1m[34mSELECT  "spree_users".* FROM "spree_users" WHERE "spree_users"."deleted_at" IS NULL AND "spree_users"."id" = ? ORDER BY "spree_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-27 21:12:24 -0200
+Processing by Spree::HomeController#index as HTML
+  [1m[36mSpree::Store Load (0.5ms)[0m  [1m[34mSELECT  "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = ? OR "spree_stores"."default" = ?) ORDER BY "spree_stores"."default" ASC LIMIT ?[0m  [["url", "localhost"], ["default", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application
+  [1m[36mSpree::Taxonomy Load (0.4ms)[0m  [1m[34mSELECT "spree_taxonomies".* FROM "spree_taxonomies" ORDER BY "spree_taxonomies"."position" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.5ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL AND "spree_taxons"."taxonomy_id" IN (?, ?)[0m  [["taxonomy_id", 1], ["taxonomy_id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Taxon Load (0.7ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IN (?, ?) ORDER BY "spree_taxons"."lft" ASC[0m  [["parent_id", 1], ["parent_id", 2]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_taxonomies.html.erb (15.2ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  DISTINCT "spree_products"."id" AS count_column FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:12:24.702125') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?) subquery_for_count[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT  MAX("spree_products"."updated_at") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:12:24.702125') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "spree_products"."id") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:12:24.702125') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL[0m  [["is_master", 1], ["currency", "USD"]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:12:24.702125') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Spree::Product Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:12:24.702125') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Product Load (1.1ms)[0m  [1m[34mSELECT  DISTINCT "spree_products".* FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = ? INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" AND "variants_including_masters_spree_products_join"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2018-11-27 23:12:24.702125') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = ? AND "spree_prices"."country_iso" IS NULL LIMIT ? OFFSET ?[0m  [["is_master", 1], ["currency", "USD"], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Variant Load (0.7ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = ? AND "spree_variants"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["is_master", 1], ["product_id", 1], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 5], ["product_id", 6], ["product_id", 7], ["product_id", 8], ["product_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Price Load (0.6ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_prices"."variant_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY country_iso IS NULL, "spree_prices"."updated_at" DESC, "spree_prices"."id" DESC[0m  [["variant_id", 1], ["variant_id", 2], ["variant_id", 3], ["variant_id", 4], ["variant_id", 5], ["variant_id", 6], ["variant_id", 7], ["variant_id", 8], ["variant_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = ? AND "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "spree_assets"."position" ASC[0m  [["viewable_type", "Spree::Variant"], ["viewable_id", 1], ["viewable_id", 2], ["viewable_id", 3], ["viewable_id", 4], ["viewable_id", 5], ["viewable_id", 6], ["viewable_id", 7], ["viewable_id", 8], ["viewable_id", 9]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 1], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (1.2ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 2], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.5ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 3], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (1.0ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 4], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.7ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 5], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.6ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 6], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.7ms)
+  [1m[36mSpree::Image Load (0.7ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 7], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.6ms)
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 8], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.6ms)
+  [1m[36mSpree::Image Load (0.6ms)[0m  [1m[34mSELECT  "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" IN ('Spree::Image') AND "spree_variants"."product_id" = ? AND "spree_assets"."viewable_type" = ? ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT ?[0m  [["product_id", 9], ["viewable_type", "Spree::Variant"], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_image.html.erb (0.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_products.html.erb (173.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application (209.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_head.html.erb (103.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_locale_selector.html.erb (2.8ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_auth_devise-2.1.0/lib/views/frontend/spree/shared/_login_bar_items.html.erb (1.6ms)
+  [1m[36mSpree::Taxon Load (1.0ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL ORDER BY "spree_taxons"."lft" ASC[0m
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_search.html.erb (7.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_nav_bar.html.erb (23.9ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_main_nav_bar.html.erb (1.6ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_header.html.erb (38.3ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_sidebar.html.erb (1.1ms)
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 392ms (Views: 364.5ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/cart_link" for 127.0.0.1 at 2018-11-27 21:12:25 -0200
+Processing by Spree::StoreController#cart_link as */*
+  [1m[36mSpree::Store Load (0.4ms)[0m  [1m[34mSELECT  "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = ? OR "spree_stores"."default" = ?) ORDER BY "spree_stores"."default" ASC LIMIT ?[0m  [["url", "localhost"], ["default", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mSpree::Order Load (0.7ms)[0m  [1m[34mSELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = ? AND "spree_orders"."guest_token" = ? AND "spree_orders"."store_id" = ? AND "spree_orders"."user_id" IS NULL LIMIT ?[0m  [["currency", "USD"], ["guest_token", "X7FWw9iNLpdQ-jgPJDQz-w"], ["store_id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendered /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/solidus_frontend-2.7.0/app/views/spree/shared/_link_to_cart.html.erb (9.6ms)
+  [1m[36mCACHE Spree::Order Load (0.0ms)[0m  [1m[34mSELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = ? AND "spree_orders"."guest_token" = ? AND "spree_orders"."store_id" = ? AND "spree_orders"."user_id" IS NULL LIMIT ?[0m  [["currency", "USD"], ["guest_token", "X7FWw9iNLpdQ-jgPJDQz-w"], ["store_id", 1], ["LIMIT", 1]]
+  ↳ /home/user/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Completed 304 Not Modified in 84ms (Views: 71.7ms | ActiveRecord: 1.2ms)
+
+
