@@ -10,6 +10,8 @@ gem 'solidus_i18n'
 gem 'rails-i18n'
 gem 'kaminari-i18n'
 gem 'routing-filter'
+gem "solidus_gateway"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
